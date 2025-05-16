@@ -1,0 +1,74 @@
+/* Pre Loader */
+
+#overlayer {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+}
+
+#loading {
+    min-width: 100%;
+    position: relative;
+    padding: 15px;
+    border-radius: 4px;
+    background: #dfe6e9;
+}
+
+#loading img {
+    height: 60px;
+    width: 60px;
+}
+
+#loading span {
+    color: #000;
+}
+
+.sidebar-light-success {
+    background: #ffffff;
+    border-radius: 15px;
+    color: #dfe6e9;
+}
+
+
+/* from page style is here  */
+
+#printSec {
+    position: relative;
+}
+
+.printSec-watermark1,
+.printSec-watermark2 {
+    width: 435px;
+    position: absolute;
+    left: 20%;
+    opacity: 0.1;
+    /* transform: rotate(-20deg); */
+}
+
+.printSec-watermark1 {
+    top: 30%;
+}
+
+.printSec-watermark2 {
+    bottom: 20%;
+}
+
+
+/* admission section sytle starts here  */
+
+.admission-sec {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/gr-bg1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
