@@ -59,13 +59,13 @@ if (isset($_SESSION['admission_name']) && $_SESSION['admission_status'] == 5) {
                             <tbody>
                                 <tr>
                                     <td scope="row">Admission</td>
-                                    <td>3000.00</td>
+                                    <td>5000.00</td>
                                     <td>Razorpay</td>
                                     <td>
                                         <select class="form-control" id="payment_option">
                                             <option selected disabled value="">Select Method</option>
-                                            <option value=" online">Online</option>
-                                            <option value="offline">Offline</option>
+                                            <option value="online">Online</option>
+                                            <option selected value="offline">Offline</option>
                                         </select>
                                     </td>
                                     <td>

@@ -37,7 +37,33 @@ $obj->insert('fees_collection', [
 
 $result = $obj->getResult();
 if ($result[0] == "success") {
-    echo json_encode(array('status' => 'success', 'msg' => 'Student fees collected.'));
+    // Fetch student name and mobile
+    $Addobj->rawsql("SELECT fname, lname, mobile FROM registration WHERE s_id = $student_id");
+    $stu_data = $Addobj->getResult();
+    $stu_name = $stu_data[0]['fname'] . ' ' . $stu_data[0]['lname'];
+    $stu_mobile = $stu_data[0]['mobile'];
+
+    // Month key mapping
+    $monthsMap = [
+        'jan' => 'JAN', 'feb' => 'FEB', 'mar' => 'MAR', 'apr' => 'APR',
+        'may' => 'MAY', 'jun' => 'JUN', 'jul' => 'JUL', 'aug' => 'AUG',
+        'sep' => 'SEP', 'oct' => 'OCT', 'nov' => 'NOV', 'dec' => 'DEC'
+    ];
+
+    $formattedMonths = [];
+    foreach ($month as $m) {
+        if (isset($monthsMap[$m])) {
+            $formattedMonths[] = $monthsMap[$m];
+        }
+    }
+
+    $monthString = implode(', ', $formattedMonths);
+
+    // Send SMS
+    $stu_details = [$stu_name, "$monthString - $year Rs:$totalAmount"];
+    $obj->sendsms('EdBiCE', "148161", $stu_details, [$stu_mobile]);
+
+    echo json_encode(['status' => 'success', 'msg' => 'Student fees collected.']);
 } else {
-    echo json_encode(array('status' => 'error', 'msg' => 'Student fees collection failed due to some reason.'));
+    echo json_encode(['status' => 'error', 'msg' => 'Student fees collection failed due to some reason.']);
 }

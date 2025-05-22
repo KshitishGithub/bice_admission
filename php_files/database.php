@@ -2,16 +2,16 @@
 class Database
 {
     // Local Server 
-    // private $db_server = "localhost";
-    // private $username = "root";
-    // private $db_pass = "";
-    // private $db_database = "bice_admin";
+    private $db_server = "localhost";
+    private $username = "root";
+    private $db_pass = "";
+    private $db_database = "bice_admin";
 
     // Live Server 
-    private $db_server = "localhost";
-    private $username = "u875326553_bice";
-    private $db_pass = "!6m=!KG=V";
-    private $db_database = "u875326553_bice";
+    // private $db_server = "localhost";
+    // private $username = "u875326553_bice";
+    // private $db_pass = "!6m=!KG=V";
+    // private $db_database = "u875326553_bice";
 
 
 
@@ -387,22 +387,16 @@ class Database
 class Admission
 {
     // Local Server 
-    // private $db_server = "localhost";
-    // private $username = "root";
-    // private $db_pass = "";
-    // private $db_database = "bice_admission";
-
-    // Dev Server 
-    // private $db_server = "localhost";
-    //private $username = "u827420411_dev_bice_admis";
-    //private $db_pass = "T>7ed:rhe>p";
-    //private $db_database = "u827420411_dev_bice_admis";
+    private $db_server = "localhost";
+    private $username = "root";
+    private $db_pass = "";
+    private $db_database = "bice_admission";
 
     // Live Server 
-    private $db_server = "localhost";
-    private $username = "u875326553_bice_admission";
-    private $db_pass = "!6m=!KG=V";
-    private $db_database = "u875326553_bice_admission";
+    // private $db_server = "localhost";
+    // private $username = "u875326553_bice_admission";
+    // private $db_pass = "!6m=!KG=V";
+    // private $db_database = "u875326553_bice_admission";
 
 
 
